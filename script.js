@@ -68,20 +68,20 @@ step2: {
     choice_a: {
         speaker: "伊吹",
         text: "「......果然是這樣嗎?」",
-        bgImage: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80",
+        bgImage: "",
         nextId: "end_a_1"
     },
     choice_b: {
         speaker: "伊吹",
         text: "「可是我還是覺得......」",
-        bgImage: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1920&q=80",
+        bgImage: "",
         nextId: "end_b_1"
     },
 
     end_a_1: {
         speaker: "",
         text: "多虧了你的提醒，伊吹發現自己大暈船，還打算去跟雪村打探蓮的戀愛史。",
-        bgImage: "https://images.plurk.com/1ZJtd2agDOFA4GsyLqKJn9.png",
+        bgImage: "https://images.plurk.com/5AURk8gJZZcXm7rX0cXZvM.png",
         nextId: "end_a" 
     },
 
@@ -89,7 +89,7 @@ step2: {
     end_a: {
         speaker: "",
         text: "【結局 A：那個蛇很難過，他在暈船】",
-        bgImage: "https://images.plurk.com/31nTdYllBDXnaU1j5ofBcP.png",
+        bgImage: "https://images.plurk.com/3msTsgcOmpLjznax7ldQmW.png",
         nextId: "resetScene" // 按一下推進到全黑置中幕
     },
 
@@ -98,14 +98,14 @@ step2: {
     end_b_1: {
         speaker: "",
         text: "伊吹在反覆恆跳中導致行事錯誤百出，這讓蓮倍感無趣，很快就叫雪村把他殺掉了。",
-        bgImage: "https://images.plurk.com/7CrfDGRLN8tNOd1vFnCdFc.png",
+        bgImage: "https://images.plurk.com/7faMDR6brBaWnvMB2gamJw.png",
         nextId: "end_b" 
     },
 
     end_b: {
         speaker: "",
         text: "【結局 B：坦白講暈船比死還難過】",
-        bgImage: "https://images.plurk.com/1y4lDqBX86OHH624h8JGOf.png",
+        bgImage: "https://images.plurk.com/6Yt2jZnHuamvQChdXBssq5.png",
        nextId: "resetScene" // 按一下推進到全黑置中幕
     }
 };
