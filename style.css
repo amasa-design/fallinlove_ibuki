@@ -1,0 +1,248 @@
+/* 重置基本樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    border-radius: 0 !important; /* 強制無圓角 */
+    font-family: inherit;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #0d0d0d;
+    font-family: "Noto Serif TC", "Songti TC", "Microsoft JhengHei", serif;
+}
+
+/* 遊戲主容器 */
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 預設靠下 */
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+/*【關鍵修正】：置中模式時，讓容器裡面的內容完美居中於畫面正中央 */
+#game-container.center-mode {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* 背景圖片樣式 */
+#bg-image {
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 1; /* 預設保持顯示 */
+}
+
+/* 【新增】特定背景切換時專用的淡入動畫 */
+#bg-image.fade-transition {
+    animation: bgFadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes bgFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 暗角罩 */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(10,10,10,0.7) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* 日式紙質對話框基本樣式 */
+.dialogue-box {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 1000px;
+    margin-bottom: 35px;
+    padding: 30px 40px 25px;
+    
+    background-color: rgba(22, 22, 24, 0.92);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    
+    border: 1px solid rgba(220, 210, 195, 0.3);
+    outline: 1px solid rgba(220, 210, 195, 0.12);
+    outline-offset: -5px;
+    
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85);
+    min-height: 150px;
+    opacity: 1;
+    transition: opacity 0.5s ease, margin 0.5s ease;
+}
+
+/*【關鍵修正】：居中模式（resetScene）下特化的對話框外觀與完全置中 */
+#game-container.center-mode .dialogue-box {
+    margin: 0 !important; /* 消除底部 margin */
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    background-color: rgba(15, 15, 16, 0.95);
+    border-color: rgba(212, 175, 55, 0.4);
+    outline-color: rgba(212, 175, 55, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* resetScene 緩慢淡入效果 */
+.dialogue-box.slow-fade-in {
+    animation: slowFadeIn 2.2s ease-in-out forwards;
+}
+
+@keyframes slowFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 切換淡出類別 */
+.dialogue-box.fade-out {
+    opacity: 0;
+}
+
+/* 角色名稱標籤 */
+.speaker-name {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    transform: translateY(-50%);
+    display: inline-block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #e6e1d6;
+    background-color: #1a1a1c;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+    padding: 6px 22px;
+    border: 1px solid rgba(220, 210, 195, 0.4);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 15;
+}
+
+/* 台詞文字 */
+.dialogue-text {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: #e6e1d6;
+    letter-spacing: 1px;
+    white-space: pre-line;
+    width: 100%;
+}
+
+/* 併入對話框內部的按鈕 */
+.restart-button {
+    margin-top: 15px;
+    padding: 12px 36px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #e6e1d6;
+    background: #222225;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+    border: 1px solid rgba(220, 210, 195, 0.35);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.restart-button:hover {
+    background: #2d2d32;
+    color: #ffffff;
+    border-color: rgba(220, 210, 195, 0.8);
+    box-shadow: 0 4px 16px rgba(220, 210, 195, 0.15);
+}
+
+/* 下一步指示燈 */
+.next-indicator {
+    position: absolute;
+    bottom: 12px;
+    right: 25px;
+    font-size: 0.8rem;
+    color: #b8b0a2;
+    animation: bounce 1.4s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.3; }
+    50% { transform: translateY(-4px); opacity: 0.9; }
+}
+
+/* 選擇肢區域 */
+.choices-container {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.choice-button {
+    width: 100%;
+    padding: 14px 24px;
+    background: rgba(22, 22, 25, 0.92);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    color: #e6e1d6;
+    border: 1px solid rgba(220, 210, 195, 0.25);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.choice-button:hover {
+    background: rgba(35, 35, 40, 0.98);
+    border-color: rgba(220, 210, 195, 0.65);
+    color: #CB4042;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* 【新增】對話框上方置中小圖樣式 */
+.ending-icon {
+    display: block;
+    margin: 0 auto 20px auto; /* 水平居中，並與下方文字保持 20px 間距 */
+    max-width: 120px;          /* 小圖最大寬度 (可依需求調整，如 100px ~ 180px) */
+    height: auto;
+    object-fit: contain;
+    border: 1px solid rgba(220, 210, 195, 0.3); /* 日式細墨框 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}

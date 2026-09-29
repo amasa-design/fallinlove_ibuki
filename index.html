@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兄弟你暈船了</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 遊戲主容器 -->
+    <div id="game-container">
+        
+        <!-- 背景圖片 -->
+        <img id="bg-image" src="" alt="遊戲背景">
+        
+        <!-- 暗角與視覺遮罩 -->
+        <div class="overlay"></div>
+
+        <!-- 選擇肢按鈕區域 -->
+        <div id="choices-container" class="choices-container hidden"></div>
+
+        <!-- 日式紙質對話框 -->
+         <!-- 【新增】結局/章節頂部置中小圖 -->
+    <img id="ending-icon" class="ending-icon hidden" src="" alt="結尾圖示">
+        <div id="dialogue-box" class="dialogue-box">
+            <!-- 角色名稱標籤 -->
+            <div id="speaker-name" class="speaker-name"></div>
+            
+            <!-- 台詞文字顯示區 -->
+            <div id="dialogue-text" class="dialogue-text"></div>
+            
+            <!-- 再回答一次按鈕（併入對話框內，點擊時直接置中顯示此按鈕或作為對話框一部分） -->
+            <button id="restart-btn" class="restart-button hidden">
+                好啦
+            </button>
+
+            <!-- 下一步提示箭頭 -->
+            <div id="next-indicator" class="next-indicator">▼</div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
