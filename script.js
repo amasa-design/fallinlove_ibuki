@@ -21,13 +21,13 @@ const storyData = {
     intro1: {
         speaker: "",
         text: "伊吹又來找你問問題了\n雖然覺得暈船很難救，你還是決定聽他說一說",
-        bgImage: "https://images.plurk.com/76uRy6seNg2jTDThy4Beqn.png",
+        bgImage: "https://images.plurk.com/42tkQGywr2os4aB6HJh8Gx.png",
         nextId: "intro2"
     },
     intro2: {
         speaker: "伊吹",
         text: "先說這是我朋友的事。\n他最近一直很在意自己的上司，但其實他本來不喜歡對方的，只是為了工作才沒離開——",
-        bgImage: "https://images.plurk.com/76uRy6seNg2jTDThy4Beqn.png",
+        bgImage: "https://images.plurk.com/ziPn95YLHgQzH6kEjXjmr.png",
         nextId: "start"
     },
 
@@ -36,7 +36,7 @@ const storyData = {
         speaker: "",
         text: "挖勒，這什麼超級老套的問法。\n你如此想著，眼看伊吹越講越焦躁，表情跟話語裡也開始出現破綻，顯然戀愛腦已經沒救。",
         // 【修改重點】設定該幕的背景圖片 URL (輸入您的圖片檔案路徑或網址)
-        bgImage: "",
+        bgImage: "https://images.plurk.com/2QoKBp5cgOQO8otKi2CvrQ.png",
         nextId: "step2"
 
         
@@ -68,13 +68,13 @@ step2: {
     choice_a: {
         speaker: "伊吹",
         text: "「......果然是這樣嗎?」",
-        bgImage: "",
+        bgImage: "https://images.plurk.com/4PNZQtzRHQgQn7Iw8qG6gY.png",
         nextId: "end_a_1"
     },
     choice_b: {
         speaker: "伊吹",
         text: "「可是我還是覺得......」",
-        bgImage: "",
+        bgImage: "https://images.plurk.com/3q5d6xsH9WslTKyVvB6Jhl.png",
         nextId: "end_b_1"
     },
 
