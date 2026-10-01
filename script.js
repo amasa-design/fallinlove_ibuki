@@ -26,7 +26,7 @@ const storyData = {
         isCentered: true,      // 觸發置中模式
         showRestartBtn: true,  // 顯示按鈕
        
-       
+    },  
 
     intro2: {
         speaker: "",
