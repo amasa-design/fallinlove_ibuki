@@ -22,10 +22,9 @@ const storyData = {
         speaker: "",
         text: "幫幫暈船仔",
         bgImage: "",
-        nextId: "intro2"
         isCentered: true,      // 觸發置中模式
         showRestartBtn: true,  // 顯示按鈕
-       
+        nextId: "intro2"
     },  
 
     intro2: {
