@@ -20,16 +20,17 @@ const storyData = {
 
      intro1: {
         speaker: "",
-        text: "幫幫暈船仔",
+        text: "可憐的伊吹似乎暈船了，一起來幫幫他吧!\n*前方50公尺接近中*",
         bgImage: "",
-         isCentered: true,      // 觸發置中模式
+        isCentered: true,      // 觸發置中模式
         showRestartBtn: true,  // 顯示按鈕
+        noTyping: true,        // 不打字
         nextId: "intro2"
     },
  
     intro2: {
         speaker: "",
-        text: "伊吹又來找你問問題了\n雖然覺得暈船很難救，你還是決定聽他說一說",
+        text: "伊吹來找你問問題了\n雖然覺得暈船很難救，你還是決定聽他說一說",
         bgImage: "https://images.plurk.com/42tkQGywr2os4aB6HJh8Gx.png",
         nextId: "intro3"
     },
