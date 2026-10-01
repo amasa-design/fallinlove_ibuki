@@ -20,8 +20,10 @@ const storyData = {
 
      intro1: {
         speaker: "",
-        text: "伊吹又來找你問問題了\n雖然覺得暈船很難救，你還是決定聽他說一說",
-        bgImage: "https://images.plurk.com/42tkQGywr2os4aB6HJh8Gx.png",
+        text: "幫幫暈船仔",
+        bgImage: "",
+         isCentered: true,      // 觸發置中模式
+        showRestartBtn: true,  // 顯示按鈕
         nextId: "intro2"
     },
  
