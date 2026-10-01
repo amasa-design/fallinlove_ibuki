@@ -23,7 +23,7 @@ const storyData = {
         text: "可憐的伊吹似乎暈船了，一起來幫幫他吧!\n*前方50公尺接近中*",
         bgImage: "",
         isCentered: true,      // 觸發置中模式
-        noTyping: true,        // 不打字
+
           nextId: "intro2"
  
     },
@@ -68,7 +68,7 @@ step2: {
     step3: {
         speaker: "伊吹",
         text: "「難道我對她——」",
-        bgImage: "https://images.plurk.com/1da9JutI1gf6TVWt1nrAle.png",
+        bgImage: "https://images.plurk.com/5PGymo2FAbDdWTOunuzgxR.png",
         // 【修改重點】出現選項分支
         choices: [
             { text: "「你暈爛了」", nextId: "choice_a" },
