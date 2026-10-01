@@ -20,7 +20,7 @@ const storyData = {
 
      intro1: {
         speaker: "",
-        text: "可憐的伊吹似乎暈船了，一起來幫幫他吧!\n*前方50公尺接近中*",
+        text: "可憐的伊吹似乎暈船了......一起來幫幫他吧！\n*前方50公尺接近中*",
         bgImage: "",
         isCentered: true,      // 觸發置中模式
 
