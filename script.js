@@ -24,12 +24,13 @@ const storyData = {
         bgImage: "",
         isCentered: true,      // 觸發置中模式
         noTyping: true,        // 不打字
-        nextId: "intro2"
+          nextId: "intro2"
+          isSlowFadeIn: true     // 緩慢淡入
     },
  
     intro2: {
         speaker: "",
-        text: "伊吹來找你問問題了\n雖然覺得暈船很難救，你還是決定聽他說一說",
+        text: "伊吹來找你問問題了\n雖然覺得這症頭很難救，你還是決定聽他說一說",
         bgImage: "https://images.plurk.com/42tkQGywr2os4aB6HJh8Gx.png",
         nextId: "intro3"
     },
@@ -56,7 +57,7 @@ step2: {
         speaker: "伊吹",
         text: "這究竟是什麼心情？\n只要想到那個人，就覺得胸口很悶，心臟像是被什麼給壓住......",
         // 【修改重點】設定該幕的背景圖片 URL (輸入您的圖片檔案路徑或網址)
-        bgImage: "https://images.plurk.com/1da9JutI1gf6TVWt1nrAle.png",
+        bgImage: "https://images.plurk.com/5PGymo2FAbDdWTOunuzgxR.png ",
         fadeBg: true, // 【關鍵】只有切換到這張背景時，才會觸發淡入淡出！
         nextId: "step3"
 
