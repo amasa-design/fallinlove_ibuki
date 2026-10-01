@@ -23,7 +23,6 @@ const storyData = {
         text: "可憐的伊吹似乎暈船了，一起來幫幫他吧!\n*前方50公尺接近中*",
         bgImage: "",
         isCentered: true,      // 觸發置中模式
-        showRestartBtn: true,  // 顯示按鈕
         noTyping: true,        // 不打字
         nextId: "intro2"
     },
