@@ -18,22 +18,14 @@ const storyData = {
         
     },
 
-     intro1: {
-        speaker: "",
-        text: "幫幫暈船仔",
-        bgImage: "",
-        isCentered: true,      // 觸發置中模式
-        showRestartBtn: true,  // 顯示按鈕
-        nextId: "intro2"
-    },  
-
-    intro2: {
+ 
+    intro1: {
         speaker: "",
         text: "伊吹又來找你問問題了\n雖然覺得暈船很難救，你還是決定聽他說一說",
         bgImage: "https://images.plurk.com/42tkQGywr2os4aB6HJh8Gx.png",
-        nextId: "intro3"
+        nextId: "intro2"
     },
-    intro3: {
+    intro2: {
         speaker: "伊吹",
         text: "先說這是我朋友的事。\n他最近一直很在意自己的上司，但其實他本來不喜歡對方的，只是為了工作才沒離開——",
         bgImage: "https://images.plurk.com/ziPn95YLHgQzH6kEjXjmr.png",
