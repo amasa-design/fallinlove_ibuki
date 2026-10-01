@@ -25,7 +25,7 @@ const storyData = {
         isCentered: true,      // 觸發置中模式
         noTyping: true,        // 不打字
           nextId: "intro2"
-          isSlowFadeIn: true     // 緩慢淡入
+ 
     },
  
     intro2: {
